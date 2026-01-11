@@ -1,0 +1,22 @@
+{
+  "customModels": [
+    {
+      "id": "custom-001",
+      "name": "Custom Revenue",
+      "appearance": { "color": { "primary": "#F97316", "secondary": "#E5E7EB" } },
+      "tags": ["sales", "custom"],
+      "parameters": {
+        "type": "bar-chart",
+        "size": { "width": 6, "height": 4 },
+        "axis": { "x": [], "y": [] }
+      },
+      "driver": "echarts"
+    }
+  ],
+  "mostUsed": [
+    { "times_used": 42, "type": "bar-chart", "template_uuid": null },
+    { "times_used": 28, "type": "line", "template_uuid": null },
+    { "times_used": 12, "type": "area-line-with-zoom", "template_uuid": null },
+    { "times_used": 7, "type": "custom", "template_uuid": "custom-001" }
+  ]
+}
