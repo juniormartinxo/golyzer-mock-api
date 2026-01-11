@@ -1,0 +1,123 @@
+{
+  "panels": [
+    {
+      "id": "panel-001",
+      "name": "Sales Overview",
+      "owner": {
+        "id": "user-001",
+        "name": "Admin User",
+        "email": "admin@golyzer.dev",
+        "level": "owner"
+      },
+      "appearance": {
+        "colors": ["#3B82F6", "#10B981", "#F59E0B"]
+      },
+      "sharingSummary": {
+        "total": 0,
+        "users": []
+      },
+      "lastUpdate": {
+        "date": "2024-01-10T10:00:00Z",
+        "user": {
+          "id": "user-001",
+          "name": "Admin User",
+          "email": "admin@golyzer.dev",
+          "level": "owner"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-001",
+          "name": "Overview",
+          "position": 0,
+          "items": [
+            {
+              "id": "chart-001",
+              "name": "Monthly Sales",
+              "type": "chart",
+              "position": { "x": 0, "y": 0 },
+              "appearance": { "color": { "primary": "#3B82F6", "secondary": "#E5E7EB" } },
+              "source": {},
+              "parameters": { "type": "bar-chart", "size": { "width": 6, "height": 4 } }
+            },
+            {
+              "id": "chart-002",
+              "name": "Revenue by Region",
+              "type": "chart",
+              "position": { "x": 6, "y": 0 },
+              "appearance": { "color": { "primary": "#10B981", "secondary": "#E5E7EB" } },
+              "source": {},
+              "parameters": { "type": "pie", "size": { "width": 6, "height": 4 } }
+            }
+          ],
+          "appearance": {
+            "grid": "lg"
+          }
+        },
+        {
+          "id": "page-002",
+          "name": "Details",
+          "position": 1,
+          "items": [],
+          "appearance": {
+            "grid": "md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "panel-002",
+      "name": "Operations",
+      "owner": {
+        "id": "user-002",
+        "name": "Viewer User",
+        "email": "viewer@golyzer.dev",
+        "level": "read_write"
+      },
+      "appearance": {
+        "colors": ["#6366F1", "#22C55E", "#F97316"]
+      },
+      "sharingSummary": {
+        "total": 1,
+        "users": [
+          {
+            "id": "user-001",
+            "name": "Admin User",
+            "email": "admin@golyzer.dev",
+            "permission": "admin"
+          }
+        ]
+      },
+      "lastUpdate": {
+        "date": "2024-02-14T08:30:00Z",
+        "user": {
+          "id": "user-002",
+          "name": "Viewer User",
+          "email": "viewer@golyzer.dev",
+          "level": "read_write"
+        }
+      },
+      "pages": [
+        {
+          "id": "page-003",
+          "name": "Status",
+          "position": 0,
+          "items": [
+            {
+              "id": "chart-003",
+              "name": "Tickets by Week",
+              "type": "chart",
+              "position": { "x": 0, "y": 0 },
+              "appearance": { "color": { "primary": "#6366F1", "secondary": "#E5E7EB" } },
+              "source": {},
+              "parameters": { "type": "line", "size": { "width": 8, "height": 4 } }
+            }
+          ],
+          "appearance": {
+            "grid": "md"
+          }
+        }
+      ]
+    }
+  ]
+}
