@@ -17,19 +17,22 @@ checks:
     enabled: true
     blocking: true
     auto_fix: true  # Change to true to fix automatically
+    # detected: biome (npx @biomejs/biome check)
   test:
     enabled: true
-    blocking: true
+    blocking: false
+    # detected: vitest (npm run test)
   typecheck:
     enabled: true
     blocking: true
-    # detected: tsc (npx tsc --noEmit)
+    # detected: tsc (npm run typecheck)
 
 # AI Code Review
 code_review:
   enabled: true
   blocking: true
   prompt: seshat-review.md  # Edite este arquivo!
+  log_dir: seshat-logs
   extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]  # extensões padrão detectadas
 
 # Custom commands (uncomment and modify as needed)
