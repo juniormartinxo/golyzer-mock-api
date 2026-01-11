@@ -14,12 +14,12 @@ commit:
 # Pre-commit checks
 checks:
   lint:
-    enabled: false
+    enabled: true
     blocking: true
     auto_fix: true  # Change to true to fix automatically
   test:
-    enabled: false
-    blocking: false
+    enabled: true
+    blocking: true
   typecheck:
     enabled: true
     blocking: true
