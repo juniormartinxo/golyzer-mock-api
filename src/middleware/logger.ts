@@ -1,4 +1,5 @@
 import type { FastifyPluginAsync } from "fastify";
+import fp from "fastify-plugin";
 
 const loggerPlugin: FastifyPluginAsync = async (fastify) => {
   fastify.addHook("onResponse", (request, reply, done) => {
@@ -15,4 +16,4 @@ const loggerPlugin: FastifyPluginAsync = async (fastify) => {
   });
 };
 
-export default loggerPlugin;
+export default fp(loggerPlugin);
