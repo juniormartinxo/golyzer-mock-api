@@ -11,9 +11,8 @@ export const getMe = async (request: FastifyRequest, reply: FastifyReply) => {
   const user = request.user ?? store.users[0];
 
   if (!user) {
-    reply.status(404).send({ error: "User not found" });
-    return;
+    return reply.status(404).send({ error: "User not found" });
   }
 
-  reply.send(toUserResponse(user));
+  return reply.send(toUserResponse(user));
 };
