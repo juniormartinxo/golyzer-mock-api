@@ -71,7 +71,7 @@ export const login = async (request: FastifyRequest<{ Body: AuthBody }>, reply: 
     return;
   }
 
-  const user = store.users.find((item) => item.username === username);
+  const user = store.users.find((item) => item.username === username || item.email === username);
   if (!user || user.password !== password) {
     reply.status(401).send({ error: "Invalid credentials" });
     return;
