@@ -2,7 +2,7 @@ import type { FastifyReply, FastifyRequest } from "fastify";
 import { store } from "../store.js";
 import { issueTokens } from "../utils/auth.js";
 
-type AuthBody = { username?: string; password?: string };
+type AuthBody = { username: string; password: string };
 
 export const login = async (request: FastifyRequest<{ Body: AuthBody }>, reply: FastifyReply) => {
   const { username, password } = request.body ?? {};
