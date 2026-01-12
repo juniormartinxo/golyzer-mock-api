@@ -1,17 +1,17 @@
 # Golyzer Mock API
 
-Standalone Fastify server that mocks the APIs used by Golyzer.
+Servidor Fastify standalone que simula as APIs usadas pelo Golyzer.
 
-## Setup
+## Instalação
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Default server: `http://localhost:3001`
+Servidor padrão: `http://localhost:3001`
 
-## Quality
+## Qualidade
 
 ```bash
 pnpm lint
@@ -23,45 +23,47 @@ pnpm test
 pnpm test:watch
 ```
 
-## Environment
+## Variáveis de Ambiente
 
-- `PORT`: server port (default: 3001)
-- `HOST`: server host (default: 0.0.0.0)
-- `JWT_SECRET`: JWT secret for mock tokens
-- `TOKEN_TTL`: JWT TTL (default: 1h)
-- `MOCK_AUTH_REQUIRED`: set to `false` to bypass auth checks
-- `PROXY_MODE`: proxy mode (`record`, `replay`, `passthrough`)
-- `BASE_API_URL`: real BASE API URL (for record/passthrough)
-- `GOLYZER_API_URL`: real GOLYZER API URL (for record/passthrough)
-- `DATA_API_URL`: real DATA API URL (for record/passthrough)
-- `RECORDINGS_DIR`: directory to store recordings (default: `recordings`)
+- `PORT`: porta do servidor (padrão: 3001)
+- `HOST`: host do servidor (padrão: 0.0.0.0)
+- `JWT_SECRET`: chave secreta JWT para tokens mock
+- `TOKEN_TTL`: tempo de vida do JWT (padrão: 1h)
+- `MOCK_AUTH_REQUIRED`: defina como `false` para ignorar verificações de autenticação
+- `MOCK_AUTH_USERNAME`: sobrescreve o usuário de login mock (padrão: fixture)
+- `MOCK_AUTH_PASSWORD`: sobrescreve a senha de login mock (padrão: fixture)
+- `PROXY_MODE`: modo do proxy (`record`, `replay`, `passthrough`)
+- `BASE_API_URL`: URL real da BASE API (para record/passthrough)
+- `GOLYZER_API_URL`: URL real da GOLYZER API (para record/passthrough)
+- `DATA_API_URL`: URL real da DATA API (para record/passthrough)
+- `RECORDINGS_DIR`: diretório para armazenar gravações (padrão: `recordings`)
 
-## Recording Proxy
+## Proxy de Gravação
 
-Capture real API responses automatically to generate fixtures.
+Captura respostas da API real automaticamente para gerar fixtures.
 
-### Modes
+### Modos
 
-| Mode | Description |
-|------|-------------|
-| `record` | Proxy to real API + save responses to `recordings/` |
-| `replay` | Use saved recordings (offline mode) |
-| `passthrough` | Proxy only, no recording |
+| Modo | Descrição |
+|------|-----------|
+| `record` | Proxy para API real + salva respostas em `recordings/` |
+| `replay` | Usa gravações salvas (modo offline) |
+| `passthrough` | Apenas proxy, sem gravação |
 
-### Usage
+### Uso
 
 ```bash
-# Record mode: capture real API responses
+# Modo record: captura respostas da API real
 pnpm dev:record
 
-# Replay mode: use saved fixtures (default)
+# Modo replay: usa fixtures salvas (padrão)
 pnpm dev:replay
 
-# Passthrough: transparent proxy
+# Passthrough: proxy transparente
 pnpm dev:passthrough
 ```
 
-### Recording Structure
+### Estrutura das Gravações
 
 ```
 recordings/
@@ -92,9 +94,9 @@ recordings/
 - `GET /charts/most-used`
 - `POST /query/fetch`
 
-## Use with Golyzer
+## Usar com o Golyzer
 
-Update the Golyzer `.env.local`:
+Atualize o `.env.local` do Golyzer:
 
 ```bash
 NEXT_PUBLIC_GOLYZER_API_URL="http://localhost:3001"
@@ -102,7 +104,7 @@ NEXT_PUBLIC_BASE_API_URL="http://localhost:3001"
 NEXT_PUBLIC_DATA_API_URL="http://localhost:3001"
 ```
 
-## Sample login
+## Exemplo de Login
 
 ```bash
 curl -X POST http://localhost:3001/authentication \
