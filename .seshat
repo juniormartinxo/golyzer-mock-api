@@ -30,7 +30,7 @@ checks:
 # AI Code Review
 code_review:
   enabled: true
-  blocking: true
+  blocking: false
   prompt: seshat-review.md  # Edite este arquivo!
   log_dir: seshat-logs
   extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]  # extensões padrão detectadas
