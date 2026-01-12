@@ -9,5 +9,6 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+src/fixtures/users.json
 .DS_Store
 Thumbs.db
