@@ -1,4 +1,5 @@
 import "fastify";
+import "@fastify/multipart";
 import type { UserRecord } from "./index.js";
 
 declare module "fastify" {
