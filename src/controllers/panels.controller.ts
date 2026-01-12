@@ -100,12 +100,12 @@ export const listPanels = async (
   const data = filtered.slice(start, start + pageLength).map(stripPanelPages);
 
   reply.send({
+    data,
     pagination: {
       total: filtered.length,
       currentPage,
       pageLength,
     },
-    data,
   });
 };
 
