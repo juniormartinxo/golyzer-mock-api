@@ -2,6 +2,7 @@ import multipart from "@fastify/multipart";
 import Fastify from "fastify";
 import corsPlugin from "./middleware/cors.js";
 import loggerPlugin from "./middleware/logger.js";
+import proxyPlugin from "./middleware/proxy.js";
 import authRoutes from "./routes/auth.routes.js";
 import chartsRoutes from "./routes/charts.routes.js";
 import panelsRoutes from "./routes/panels.routes.js";
@@ -14,6 +15,7 @@ export const buildServer = async () => {
   await app.register(corsPlugin);
   await app.register(multipart);
   await app.register(loggerPlugin);
+  await app.register(proxyPlugin);
 
   await app.register(authRoutes, { prefix: "/authentication" });
   await app.register(userRoutes, { prefix: "/me" });
