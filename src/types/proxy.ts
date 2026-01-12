@@ -1,6 +1,6 @@
 // Proxy configuration types
 
-export type ProxyMode = "record" | "replay" | "passthrough";
+export type ProxyMode = "record" | "force-record" | "replay" | "passthrough";
 
 export interface ProxyConfig {
   mode: ProxyMode;
