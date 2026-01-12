@@ -12,3 +12,6 @@ pnpm-debug.log*
 src/fixtures/users.json
 .DS_Store
 Thumbs.db
+
+# Recordings contém dados sensíveis da API
+recordings/**/*.json
