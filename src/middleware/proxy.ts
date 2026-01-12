@@ -1,4 +1,5 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
+import fp from "fastify-plugin";
 import { loadRecording, saveRecording } from "../services/recorder.js";
 import {
   type ApiTarget,
@@ -9,12 +10,36 @@ import {
 } from "../types/proxy.js";
 
 const resolveApiTarget = (url: string): ApiTarget | null => {
-  if (url.startsWith("/authentication")) return "base";
+  if (url.startsWith("/authentication") || url.startsWith("/v1/")) return "base";
   if (url.startsWith("/query")) return "data";
-  if (url.startsWith("/me") || url.startsWith("/panels") || url.startsWith("/charts")) {
+  if (
+    url.startsWith("/me") ||
+    url.startsWith("/panels") ||
+    url.startsWith("/charts") ||
+    url.startsWith("/authorization")
+  ) {
     return "golyzer";
   }
   return null;
+};
+
+const applyCorsHeaders = (request: FastifyRequest, reply: FastifyReply) => {
+  const origin = request.headers.origin;
+  if (typeof origin === "string" && origin.length > 0) {
+    reply.header("access-control-allow-origin", origin);
+    reply.header("access-control-allow-credentials", "true");
+    reply.header("vary", "origin");
+  }
+
+  const requestHeaders = request.headers["access-control-request-headers"];
+  if (typeof requestHeaders === "string" && requestHeaders.length > 0) {
+    reply.header("access-control-allow-headers", requestHeaders);
+  }
+
+  const requestMethod = request.headers["access-control-request-method"];
+  if (typeof requestMethod === "string" && requestMethod.length > 0) {
+    reply.header("access-control-allow-methods", requestMethod);
+  }
 };
 
 const forwardRequest = async (
@@ -62,34 +87,67 @@ const forwardRequest = async (
 const proxyPlugin: FastifyPluginAsync = async (fastify) => {
   const config = getProxyConfig();
 
-  if (config.mode === "replay") {
-    fastify.log.info("Proxy mode: REPLAY - using recorded fixtures");
-    return;
-  }
-
   fastify.log.info(`Proxy mode: ${config.mode.toUpperCase()}`);
 
-  fastify.addHook("onRequest", async (request: FastifyRequest, reply: FastifyReply) => {
+  // Ensure CORS headers are always present on API responses
+  fastify.addHook("onSend", async (request: FastifyRequest, reply: FastifyReply) => {
     const target = resolveApiTarget(request.url);
     if (!target) return;
+
+    const origin = request.headers.origin ?? "*";
+    reply.header("access-control-allow-origin", origin);
+    reply.header("access-control-allow-credentials", "true");
+    reply.header("access-control-allow-methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+    reply.header(
+      "access-control-allow-headers",
+      "Authorization, Content-Type, X-Customer-ID, X-Query-Format, X-App-Name, X-Request-ID, X-Builder-Mode, X-Span-Attributes"
+    );
+  });
+
+  fastify.addHook("preHandler", async (request: FastifyRequest, reply: FastifyReply) => {
+    const target = resolveApiTarget(request.url);
+    if (!target) return;
+
+    // Handle preflight OPTIONS requests
+    if (request.method === "OPTIONS") {
+      applyCorsHeaders(request, reply);
+      reply.header("access-control-allow-methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
+      reply.status(204).send();
+      return;
+    }
 
     const endpoint = request.url.split("?")[0];
     const method = request.method;
 
-    if (config.mode === "record") {
-      const existing = await loadRecording(config, target, endpoint, method);
+    // No modo replay ou record, tenta usar gravação existente
+    if (config.mode === "replay" || config.mode === "record") {
+      const existing = await loadRecording(config, target, endpoint, method, request.body);
       if (existing) {
         fastify.log.info(`[REPLAY] ${method} ${endpoint}`);
+        applyCorsHeaders(request, reply);
         reply.status(existing.statusCode).send(existing.body);
+        return;
+      }
+
+      // No modo replay puro, se não tiver gravação retorna 404
+      if (config.mode === "replay") {
+        fastify.log.warn(`[MISSING] ${method} ${endpoint} - no recording found`);
+        applyCorsHeaders(request, reply);
+        reply.status(404).send({
+          error: "Recording not found",
+          message: `No recording for ${method} ${endpoint}`,
+          hint: "Run with PROXY_MODE=record to record this endpoint",
+        });
         return;
       }
     }
 
+    // Modos record, force-record e passthrough fazem proxy para a API real
     try {
       fastify.log.info(`[PROXY] ${method} ${endpoint} -> ${target}`);
       const result = await forwardRequest(request, config, target);
 
-      if (config.mode === "record") {
+      if (config.mode === "record" || config.mode === "force-record") {
         const recording: Recording = {
           endpoint,
           method,
@@ -104,12 +162,14 @@ const proxyPlugin: FastifyPluginAsync = async (fastify) => {
         fastify.log.info(`[RECORDED] ${method} ${endpoint}`);
       }
 
+      applyCorsHeaders(request, reply);
       reply.status(result.status).send(result.body);
     } catch (error) {
       fastify.log.error(error, `Proxy error for ${method} ${endpoint}`);
+      applyCorsHeaders(request, reply);
       reply.status(502).send({ error: "Proxy error", message: String(error) });
     }
   });
 };
 
-export default proxyPlugin;
+export default fp(proxyPlugin);
