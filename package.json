@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "dev:record": "PROXY_MODE=record tsx watch src/index.ts",
+    "dev:force-record": "PROXY_MODE=force-record tsx watch src/index.ts",
     "dev:replay": "PROXY_MODE=replay tsx watch src/index.ts",
     "dev:passthrough": "PROXY_MODE=passthrough tsx watch src/index.ts",
     "build": "tsc",
@@ -23,6 +24,7 @@
     "@fastify/multipart": "^7.6.0",
     "dotenv": "^16.4.5",
     "fastify": "^4.26.0",
+    "fastify-plugin": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
     "uuid": "^9.0.0"
   },
