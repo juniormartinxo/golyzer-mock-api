@@ -1,123 +1,424 @@
 {
   "panels": [
     {
-      "id": "panel-001",
-      "name": "Sales Overview",
-      "owner": {
-        "id": "user-001",
-        "name": "Admin User",
-        "email": "admin@golyzer.dev",
-        "level": "owner"
-      },
-      "appearance": {
-        "colors": ["#3B82F6", "#10B981", "#F59E0B"]
-      },
-      "sharingSummary": {
-        "total": 0,
-        "users": []
-      },
+      "id": "90ef8d76-37d7-4119-ad50-e62f9a146d23",
+      "name": "[#1523] - Implementar o realce parcial para o gráfico de barras em cascata",
       "lastUpdate": {
-        "date": "2024-01-10T10:00:00Z",
+        "date": "2026-01-10T20:33:11.293Z",
         "user": {
-          "id": "user-001",
-          "name": "Admin User",
-          "email": "admin@golyzer.dev",
-          "level": "owner"
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
         }
       },
-      "pages": [
-        {
-          "id": "page-001",
-          "name": "Overview",
-          "position": 0,
-          "items": [
-            {
-              "id": "chart-001",
-              "name": "Monthly Sales",
-              "type": "chart",
-              "position": { "x": 0, "y": 0 },
-              "appearance": { "color": { "primary": "#3B82F6", "secondary": "#E5E7EB" } },
-              "source": {},
-              "parameters": { "type": "bar-chart", "size": { "width": 6, "height": 4 } }
-            },
-            {
-              "id": "chart-002",
-              "name": "Revenue by Region",
-              "type": "chart",
-              "position": { "x": 6, "y": 0 },
-              "appearance": { "color": { "primary": "#10B981", "secondary": "#E5E7EB" } },
-              "source": {},
-              "parameters": { "type": "pie", "size": { "width": 6, "height": 4 } }
-            }
-          ],
-          "appearance": {
-            "grid": "lg"
-          }
-        },
-        {
-          "id": "page-002",
-          "name": "Details",
-          "position": 1,
-          "items": [],
-          "appearance": {
-            "grid": "md"
-          }
-        }
-      ]
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
     },
     {
-      "id": "panel-002",
-      "name": "Operations",
-      "owner": {
-        "id": "user-002",
-        "name": "Viewer User",
-        "email": "viewer@golyzer.dev",
-        "level": "read_write"
-      },
-      "appearance": {
-        "colors": ["#6366F1", "#22C55E", "#F97316"]
-      },
-      "sharingSummary": {
-        "total": 1,
-        "users": [
-          {
-            "id": "user-001",
-            "name": "Admin User",
-            "email": "admin@golyzer.dev",
-            "permission": "admin"
-          }
-        ]
-      },
+      "id": "51537e7a-1f5a-4ccd-9321-260e0a5df634",
+      "name": "[#1491] - Implementar modo de interação do drilldown",
       "lastUpdate": {
-        "date": "2024-02-14T08:30:00Z",
+        "date": "2026-01-08T12:05:18.518Z",
         "user": {
-          "id": "user-002",
-          "name": "Viewer User",
-          "email": "viewer@golyzer.dev",
-          "level": "read_write"
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
         }
       },
-      "pages": [
-        {
-          "id": "page-003",
-          "name": "Status",
-          "position": 0,
-          "items": [
-            {
-              "id": "chart-003",
-              "name": "Tickets by Week",
-              "type": "chart",
-              "position": { "x": 0, "y": 0 },
-              "appearance": { "color": { "primary": "#6366F1", "secondary": "#E5E7EB" } },
-              "source": {},
-              "parameters": { "type": "line", "size": { "width": 8, "height": 4 } }
-            }
-          ],
-          "appearance": {
-            "grid": "md"
-          }
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "317192cf-a2fc-4ee5-83bd-d2241bb8eac3",
+      "name": "[#1538] - Implementar o realce parcial para o gráfico de bolhas",
+      "lastUpdate": {
+        "date": "2026-01-06T19:23:06.930Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
         }
-      ]
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "b1c4bec8-59a7-46f9-a689-66e12df6e17e",
+      "name": "[#1534] - Implementar o realce parcial para o gráfico de rosca",
+      "lastUpdate": {
+        "date": "2026-01-06T14:03:09.411Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "fd8666b1-79ec-4050-8fc7-f1ec2ba16577",
+      "name": "[#1533] - Implementar o realce parcial para o gráfico de pizza",
+      "lastUpdate": {
+        "date": "2026-01-05T15:13:34.573Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "52e5c162-2d7c-458f-a628-e0289b58fa96",
+      "name": "[#1448] - Implementar comportamentos para a ação de realçar no elemento \"Gráfico de barras com 2 visões\"",
+      "lastUpdate": {
+        "date": "2025-12-18T21:53:37.555Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "7c00e835-7335-4a76-8781-9263571d0124",
+      "name": "[#1530] - Implementar o realce parcial para o gráfico de barra ordenado",
+      "lastUpdate": {
+        "date": "2025-12-18T20:56:54.746Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "cd0e2b46-1da9-4927-8c51-24a8c44d818e",
+      "name": "[#1529] - Implementar o realce parcial para o gráfico de barra empilhada polar",
+      "lastUpdate": {
+        "date": "2025-12-18T17:09:34.531Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "4b0998b7-ddf0-4ea6-a92a-f51987763720",
+      "name": "[#1525] - Implementar o realce parcial para o gráfico com linha média",
+      "lastUpdate": {
+        "date": "2025-12-16T13:35:09.778Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "2908fcd8-8fee-4046-ab48-31812e3a7d6a",
+      "name": "[#1524] - Implementar o realce parcial para o gráfico de barras com destaque",
+      "lastUpdate": {
+        "date": "2025-12-16T13:29:40.613Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "1b087a23-e1cc-4e5e-958f-c71b6c46fecb",
+      "name": "[#1528] - Implementar o realce parcial para o gráfico com múltiplos eixos Y",
+      "lastUpdate": {
+        "date": "2025-12-18T15:52:52.667Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "ef6d62ec-8869-4ad8-b920-bd27875cc094",
+      "name": "[#1527] - Implementar o realce parcial para o gráfico de barra e linha",
+      "lastUpdate": {
+        "date": "2025-12-16T19:43:58.830Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "b8002772-9adc-4a92-be84-a19e3ea654e6",
+      "name": "Bolhas e dispersão",
+      "lastUpdate": {
+        "date": "2026-01-06T14:18:30.932Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "46c486fc-00ae-4d39-8f8b-5044258ee0b3",
+      "name": "Realce parcial",
+      "lastUpdate": {
+        "date": "2025-12-23T18:16:01.447Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "47873660-5109-42d8-b74d-df088d7e36db",
+      "name": "Gráficos de linhas",
+      "lastUpdate": {
+        "date": "2025-12-05T20:43:41.099Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "edc5fd0a-7198-4117-815f-f2cc084cda05",
+      "name": "[#1523] - Realce Parcial para o Gráfico de Barras em Cascata",
+      "lastUpdate": {
+        "date": "2025-12-16T12:59:17.445Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "478118de-e29c-4f7e-a9ff-77cd5d3934fc",
+      "name": "[#1526] - Implementar o realce parcial para o gráfico de barra horizontal com valor negativo",
+      "lastUpdate": {
+        "date": "2025-12-17T21:37:55.549Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "303181fd-3775-45a3-babf-e1190bee8bc3",
+      "name": "Doom War",
+      "lastUpdate": {
+        "date": "2025-12-29T15:58:10.485Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "47b1d25c-909c-4e47-97c7-53b8b8c60f5d",
+      "name": "Novo painel",
+      "lastUpdate": {
+        "date": "2025-11-28T13:37:24.645Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
+    },
+    {
+      "id": "e87ce63a-8540-4dd0-990a-e7d6c6069b28",
+      "name": "Task 1397 - Modo de Interação nas Tabelas",
+      "lastUpdate": {
+        "date": "2025-09-24T18:56:26.024Z",
+        "user": {
+          "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+          "email": "junior.goapice.dev@uorak.com",
+          "name": "Junior",
+          "avatar": null
+        }
+      },
+      "owner": {
+        "name": "Junior",
+        "email": "junior.goapice.dev@uorak.com",
+        "id": "4c5c85fc-485c-4e62-8066-b9ea6861ae43",
+        "level": "owner",
+        "avatar": null
+      },
+      "pages": []
     }
   ]
 }
