@@ -99,6 +99,7 @@ export interface ApiListPanelData {
 
 export type SavePanelData = Omit<ApiPanelData, "id" | "lastUpdate"> & {
   pages: ApiPage[];
+  id?: string;
 };
 
 export type UpdatePanelData = Omit<ApiPanelData, "lastUpdate"> & {
