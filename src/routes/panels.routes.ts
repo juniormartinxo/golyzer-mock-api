@@ -21,7 +21,11 @@ const panelsRoutes: FastifyPluginAsync = async (fastify) => {
     };
   }>("/", { preHandler: authPreHandler }, listPanels);
   fastify.post<{ Body: SavePanelData }>("/", { preHandler: authPreHandler }, createPanel);
-  fastify.get<{ Params: { id: string } }>("/:id", { preHandler: authPreHandler }, getPanelById);
+  // Rota catch-all para permitir o proxy gravar da API real
+  // O preHandler do proxy vai interceptar e fazer o proxy para a API real
+  fastify.get<{ Params: { id: string } }>("/:id", async (_request, reply) => {
+    reply.status(404).send({ error: "Not handled by proxy" });
+  });
   fastify.put<{ Params: { id: string }; Body: UpdatePanelData }>(
     "/:id",
     { preHandler: authPreHandler },
