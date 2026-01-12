@@ -9,6 +9,7 @@ import chartsRoutes from "./routes/charts.routes.js";
 import panelsRoutes from "./routes/panels.routes.js";
 import queryRoutes from "./routes/query.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import v1Routes from "./routes/v1.routes.js";
 
 export const buildServer = async () => {
   const app = Fastify({ logger: true });
@@ -24,6 +25,7 @@ export const buildServer = async () => {
   await app.register(panelsRoutes, { prefix: "/panels" });
   await app.register(chartsRoutes, { prefix: "/charts" });
   await app.register(queryRoutes, { prefix: "/query" });
+  await app.register(v1Routes, { prefix: "/v1" });
 
   return app;
 };
