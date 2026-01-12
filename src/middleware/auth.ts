@@ -9,25 +9,23 @@ export const authPreHandler = async (request: FastifyRequest, reply: FastifyRepl
 
   const header = request.headers.authorization;
   if (!header || !header.startsWith("Bearer ")) {
-    reply.status(401).send({ error: "Unauthorized" });
-    return;
+    return reply.status(401).send({ error: "Unauthorized" });
   }
 
   const token = header.replace("Bearer ", "").trim();
 
   try {
     const payload = verifyToken(token);
-    const userId = payload.sub as string | undefined;
-    const username = payload.username as string | undefined;
+    const userId = typeof payload.sub === "string" ? payload.sub : undefined;
+    const username = typeof payload.username === "string" ? payload.username : undefined;
     const user = store.users.find((item) => item.id === userId || item.username === username);
 
     if (!user) {
-      reply.status(401).send({ error: "Unauthorized" });
-      return;
+      return reply.status(401).send({ error: "Unauthorized" });
     }
 
     request.user = user;
   } catch (error) {
-    reply.status(401).send({ error: "Unauthorized" });
+    return reply.status(401).send({ error: "Unauthorized" });
   }
 };
