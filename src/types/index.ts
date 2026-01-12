@@ -20,6 +20,25 @@ export interface UserRecord extends UserData {
   role: string;
   companies: CompanyData[];
   preferences: Record<string, unknown>;
+  authId?: number;
+  uuid?: string;
+  lastName?: string;
+  admissionDate?: string;
+  status?: boolean;
+  user?: boolean;
+  picture?: Record<string, unknown> | string | null;
+  theme?: string;
+  sysadmin?: boolean;
+  departmentId?: number | null;
+  collaboratorPositionId?: number | null;
+  isMobileUser?: boolean;
+  cognitoSub?: string | null;
+  firebaseUid?: string | null;
+  createdAt?: string;
+  updatedAt?: string | null;
+  deletedAt?: string | null;
+  phone?: string;
+  subscription?: Record<string, unknown> | null;
 }
 
 export type UserResponse = Omit<UserRecord, "password">;
@@ -28,7 +47,7 @@ export interface ApiCollaborator {
   id: string;
   name: string;
   email?: string;
-  avatar?: { url: string };
+  avatar?: { url: string } | null;
   level?: string;
 }
 
