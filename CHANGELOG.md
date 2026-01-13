@@ -6,6 +6,15 @@ O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ---
 
+## [Unreleased]
+
+### Adicionado
+
+- Dockerfile com build multi-stage para execução em container
+- docker-compose com volume para gravações e suporte a `.env` via `env_file`
+- `.dockerignore` para reduzir o contexto de build
+- Documentação de uso via Docker no README
+
 ## [1.2.0] - 2026-01-12
 
 ### Adicionado
