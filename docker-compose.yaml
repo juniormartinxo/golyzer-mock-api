@@ -1,6 +1,8 @@
 services:
   golyzer-mock-api:
     build: .
+    env_file:
+      - .env.local
     ports:
       - "3001:3001"
     volumes:
