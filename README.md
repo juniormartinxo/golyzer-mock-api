@@ -28,6 +28,8 @@ docker run --rm -p 3001:3001 \
 docker compose up --build
 ```
 
+O `docker-compose.yaml` carrega variáveis do `.env`. Defina `PROXY_MODE` e as URLs reais quando precisar gravar fixtures.
+
 Use `PROXY_MODE=record` e defina as URLs reais (`BASE_API_URL`, `GOLYZER_API_URL`, `DATA_API_URL`) quando quiser gravar novas fixtures.
 
 ## Qualidade
